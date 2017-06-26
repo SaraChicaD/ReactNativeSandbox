@@ -1,17 +1,13 @@
- import React, { Component } from 'react';
-import {
-  AppRegistry,
+import React, { Component, View, AppRegistry,
   StyleSheet,
-  Text,
-  View
-} from 'react-native';
+  Text } from 'react-native';
 
-var {
-    StyleSheet,
-    View,
-    Text,
-    Component
-   } = React;
+// var {
+//     StyleSheet,
+//     View,
+//     Text,
+//     Component
+//    } = React;
  
 const styles = StyleSheet.create({
     description: {

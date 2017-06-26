@@ -1,0 +1,1 @@
+Tutorial from here: https://www.thepolyglotdeveloper.com/2015/09/using-navigator-routes-in-your-react-native-application/

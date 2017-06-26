@@ -4,30 +4,57 @@
  * @flow
  */
 
-import React, { Component } from 'react';
+import React, { Component,   AppRegistry,
+  StyleSheet,
+  Text,
+  View,
+  TabBarIOS } from 'react-native';
 import Featured from './Featured';
 import Search from './Search';
-
-
-//endign here, pick up here ***
+// import {
+//   AppRegistry,
+//   StyleSheet,
+//   Text,
+//   View,
+//   TabBarIOS
+// } from 'react-native';
 
 export default class BookSearch extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-      </View>
-    );
-  }
+
+  constructor(props) {
+       super(props);
+       this.state = {
+           selectedTab: 'featured'
+       };
+   }
+
+   render() {
+       return (
+           <TabBarIOS selectedTab={this.state.selectedTab}>
+               <TabBarIOS.Item
+                   selected={this.state.selectedTab === 'featured'}
+                   // icon={{uri: 'featured'}}
+                   onPress={() => {
+                       this.setState({
+                           selectedTab: 'featured'
+                       });
+                   }}>
+                   <Featured/>
+               </TabBarIOS.Item>
+               <TabBarIOS.Item
+                   selected={this.state.selectedTab === 'search'}
+                   // icon={{uri: 'search'}}
+                   onPress={() => {
+                       this.setState({
+                           selectedTab: 'search'
+                       });
+                   }}>
+                   <Search/>
+               </TabBarIOS.Item>
+           </TabBarIOS>
+       );
+   }
+
 }
 
 const styles = StyleSheet.create({
