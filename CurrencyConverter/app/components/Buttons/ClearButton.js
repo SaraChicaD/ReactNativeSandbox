@@ -4,10 +4,10 @@ import { View, Image, Text, TouchableOpacity } from 'react-native';
 import styles from './styles';
 
 const ClearButton = ({text, onPress}) => (
-    <TouchableOpacity onPress={onPress}>
-        <View>
-            <Image source={require('./iamges/icon.png')} />
-            <Text>{text}</Text>
+    <TouchableOpacity onPress={onPress} style={styles.container}>
+        <View style={styles.wrapper}>
+            <Image resizeMode="contain" source={require('./images/icon.png')} style={styles.icon}/>
+            <Text style={styles.text}>{text}</Text>
         </View>
 
     </TouchableOpacity>
@@ -16,7 +16,6 @@ const ClearButton = ({text, onPress}) => (
 ClearButton.propTypes = { 
     text: PropTypes.string,
     onPress: PropTypes.func,
-    
 };
 
 export default ClearButton;
